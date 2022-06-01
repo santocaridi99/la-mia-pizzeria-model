@@ -1,0 +1,173 @@
+﻿@using Microsoft.AspNetCore.Html;
+@{
+    ViewData["Title"] = "Home Page";
+    Layout = null;
+}
+
+@{
+    string Nome = "Santo";
+    string Cognome = "Caridi";
+}
+
+@*@functions{
+
+   
+    public void StampaNumeri(int n)
+    {
+        int sum = 0;
+        for(int i = 0; i <= n; i++){
+            sum += n;
+        };
+
+        <span>@sum</span>
+
+    }
+
+    public int findChar(char a)
+    {
+        string str = "nel mezzo del cammin di nostra vita";
+        int freq = str.Count(f=>(f==a));
+        return freq;
+    }
+
+    public List<int> randomNumebers()
+    {
+
+        Random rng = new Random();
+        List<int> list = new List<int>();
+        for(int i = 0; i <= 20; i++)
+        {
+            list.Add(rng.Next(1, 90));
+        }
+        return list;
+    }
+}
+}
+ @{
+    //esercizio 5
+    Func<dynamic, IHtmlContent> StampaData()
+    {
+        return @<div>@DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss")</div>;
+    }
+
+    }
+    @{
+    //esercizio 6
+    Func<dynamic, IHtmlContent> StampaDataComplesso()
+    {
+        return 
+        @<div>@DateTime.Today.AddDays(-7)</div>;
+        <div>@DateTime.Today.DayOfWeek</div>;
+        <div>@DateTime.Today.AddYears(1).DayOfWeek</div>;
+    }
+    *@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"] - la_mia_pizzeria_static</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/la_mia_pizzeria_static.styles.css" asp-append-version="true" />
+</head>
+<body>
+    @*esercizi da cancellare*@
+@*@*
+   @* 1. Dichiarare una variabile valorizzandola con il nostro nome.
+    Dichiarare un'altra variabile valorizzandola con il nostro cognome.
+    Stampare il nostro nome e cognome all'interno di un tag h2.*@
+    @*<h2>@Nome  @Cognome</h2>*@
+
+   @* 2. Creare una funzione che stampa la somma dei numeri che vanno da 1 a n (con n passato come parametro - n incluso)
+    Stampare dentro uno span il risultato.*@
+  @*  @{
+        StampaNumeri(2);
+    }*@
+
+   @* 3. Contare quante volte la lettera a Ã¨ presente nalla frase "nel mezzo del cammin di nostra vita" e stampare questo valore in pagina*@
+
+   @* @{
+        <div>@findChar('a')</div>
+    }*@
+    @*4. Creare una List<int> di 20 numeri interi (generati random da 1 a 90, 1 e 90 inclusi) e mostrare in pagina solo i numeri compresi tra 20 e 70*@
+   @* @{
+        foreach(int n in randomNumebers())
+        {
+            if ( n<=20 & n>=70 ){
+                <div>@n</div>
+            }
+        }   
+
+    }*@@*@
+
+    @{ //esercizio 5
+    @StampaData()(null);
+    }
+
+    @{ //esercizio 6
+    @StampaDataComplesso()(null);
+    } 
+
+   @* fine esercizi*@
+<header>
+    <h1>Pizzeria da Santo</h1>
+</header>
+    
+<div class="container-fluid d-flex">
+    <div class="flex sidebar">
+        <div class="title"><h1>Le nostre Pizze</h1></div>
+        <ul>
+            <li><a>Pizza Margherita</a></li>
+            <li><a>Pizza Capricciosa</a></li>
+             <li><a>Pizza Salsiccia e patate</a></li>
+            <li><a>Pizza marinara</a></li>
+            <li><a>Pizza  Quattro stagioni</a></li>
+
+        </ul>
+    </div>
+    <div class="container d-flex flex-wrap">
+    <div class="row">
+         <div class="card">
+            <img src="./img/pizza-margherita-2-6yehdnu31vrv1puavcja7g753ipcgihq8vyh1ifv5pw.jpg" class="" alt="pizza margherita" />
+            <h1 class="titolo">Pizza margherita</h1>
+            <p class="descrizione">pomodoro , mozzarella campana , basilico</p>
+            <p class="prezzo"> 3 euro</p>
+        </div>
+        <div class="card">
+            <img src="./img/Pizza_capricciosa.jpg" class="" alt="pizza capricciosa" />
+            <h1 class="titolo">Pizza Capricciosa</h1>
+            <p class="descrizione">Che soddisfa ogni capriccio</p>
+            <p class="prezzo"> 4 euro</p>
+        </div>
+        <div class="card">
+            <img src="./img/salsicciaepatate.jpg" class="" alt="salsiccia e patate" />
+            <h1 class="titolo">Pizza Salsiccia e patate</h1>
+            <p class="descrizione">salsiccia , patate , mozzarella capana</p>
+            <p class="prezzo"> 5 euro</p>
+        </div>
+        <div class="card">
+            <img src="./img/marinara.jpg" class="" alt="marinara" />
+            <h1 class="titolo">Marinara</h1>
+            <p class="descrizione">Grande classico</p>
+            <p class="prezzo"> 3 euro</p>
+        </div>
+         <div class="card">
+            <img src="./img/Pizza_Quattro_Stagioni_transparent.png" class="" alt="quattro stagioni" />
+            <h1 class="titolo">Quattro stagioni</h1>
+            <p class="descrizione">la Quattro - stagioni</p>
+            <p class="prezzo"> 4 euro</p>
+        </div>
+    </div>
+
+    </div>
+
+</div>
+</body>
+</html>
+
+
+
+
+
