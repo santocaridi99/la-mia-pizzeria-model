@@ -9,58 +9,7 @@
     string Cognome = "Caridi";
 }
 
-@*@functions{
 
-   
-    public void StampaNumeri(int n)
-    {
-        int sum = 0;
-        for(int i = 0; i <= n; i++){
-            sum += n;
-        };
-
-        <span>@sum</span>
-
-    }
-
-    public int findChar(char a)
-    {
-        string str = "nel mezzo del cammin di nostra vita";
-        int freq = str.Count(f=>(f==a));
-        return freq;
-    }
-
-    public List<int> randomNumebers()
-    {
-
-        Random rng = new Random();
-        List<int> list = new List<int>();
-        for(int i = 0; i <= 20; i++)
-        {
-            list.Add(rng.Next(1, 90));
-        }
-        return list;
-    }
-}
-}
- @{
-    //esercizio 5
-    Func<dynamic, IHtmlContent> StampaData()
-    {
-        return @<div>@DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss")</div>;
-    }
-
-    }
-    @{
-    //esercizio 6
-    Func<dynamic, IHtmlContent> StampaDataComplesso()
-    {
-        return 
-        @<div>@DateTime.Today.AddDays(-7)</div>;
-        <div>@DateTime.Today.DayOfWeek</div>;
-        <div>@DateTime.Today.AddYears(1).DayOfWeek</div>;
-    }
-    *@
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -73,44 +22,7 @@
     <link rel="stylesheet" href="~/la_mia_pizzeria_static.styles.css" asp-append-version="true" />
 </head>
 <body>
-    @*esercizi da cancellare*@
-@*@*
-   @* 1. Dichiarare una variabile valorizzandola con il nostro nome.
-    Dichiarare un'altra variabile valorizzandola con il nostro cognome.
-    Stampare il nostro nome e cognome all'interno di un tag h2.*@
-    @*<h2>@Nome  @Cognome</h2>*@
-
-   @* 2. Creare una funzione che stampa la somma dei numeri che vanno da 1 a n (con n passato come parametro - n incluso)
-    Stampare dentro uno span il risultato.*@
-  @*  @{
-        StampaNumeri(2);
-    }*@
-
-   @* 3. Contare quante volte la lettera a Ã¨ presente nalla frase "nel mezzo del cammin di nostra vita" e stampare questo valore in pagina*@
-
-   @* @{
-        <div>@findChar('a')</div>
-    }*@
-    @*4. Creare una List<int> di 20 numeri interi (generati random da 1 a 90, 1 e 90 inclusi) e mostrare in pagina solo i numeri compresi tra 20 e 70*@
-   @* @{
-        foreach(int n in randomNumebers())
-        {
-            if ( n<=20 & n>=70 ){
-                <div>@n</div>
-            }
-        }   
-
-    }*@@*@
-
-    @{ //esercizio 5
-    @StampaData()(null);
-    }
-
-    @{ //esercizio 6
-    @StampaDataComplesso()(null);
-    } 
-
-   @* fine esercizi*@
+  
 <header>
     <h1>Pizzeria da Santo</h1>
 </header>
