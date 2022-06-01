@@ -1,6 +1,6 @@
 ﻿@using Microsoft.AspNetCore.Html;
 @{
-  
+
     Layout = null;
 }
 
@@ -18,24 +18,24 @@
     <link rel="stylesheet" href="~/la_mia_pizzeria_static.styles.css" asp-append-version="true" />
 </head>
 <body>
-  
-<header>
-    <h1>Pizzeria da Santo</h1>
-</header>
+
+    <header>
+        <h1>Pizzeria da Santo</h1>
+    </header>
 
     <div class="container d-flex flex-wrap">
-   
-               
-                         <div class="card">
-                          <img src="@Model.Foto" class="" alt="@Model.Nome" />
-                          <h1 class="titolo">@Model.Nome</h1>
-                          <p class="descrizione">@Model.Descrizione</p>
-                          <p class="prezzo"> @Model.Prezzo euro</p>
-                         </div>
+
+
+        <div class="card">
+            <img src="@Model.Foto" class="" alt="@Model.Nome" />
+            <h1 class="titolo">@Model.Nome</h1>
+            <p class="descrizione">@Model.Descrizione</p>
+            <p class="prezzo"> @Model.Prezzo euro</p>
+        </div>
 
 
     </div>
 
-</div>
+    </div>
 </body>
 </html>

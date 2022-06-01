@@ -18,47 +18,47 @@
     <link rel="stylesheet" href="~/la_mia_pizzeria_static.styles.css" asp-append-version="true" />
 </head>
 <body>
-  
-<header>
-    <h1>Pizzeria da Santo</h1>
-</header>
 
-<div class="container-fluid d-flex">
-    <div class="flex sidebar">
-        <div class="title"><h1>Le nostre Pizze</h1></div>
-        <ul>
+    <header>
+        <h1>Pizzeria da Santo</h1>
+    </header>
+
+    <div class="container-fluid d-flex">
+        <div class="flex sidebar">
+            <div class="title"><h1>Le nostre Pizze</h1></div>
+            <ul>
                 @{
-                    if(Model.listaDiPizze != null)
+                    if (Model.listaDiPizze != null)
                     {
-                        foreach(var p in Model.listaDiPizze)
-                       {
+                        foreach (var p in Model.listaDiPizze)
+                        {
                             <li><a>@p.Nome</a></li>
-                       }
+                        }
                     }
                     else
                     {
-                         <h1>Non ci sono pizze nella nostra applicazione</h1>
+                        <h1>Non ci sono pizze nella nostra applicazione</h1>
                     }
 
 
-            }
-        </ul>
-    </div>
-    <div class="container d-flex flex-wrap">
-    <div class="row">
+                }
+            </ul>
+        </div>
+        <div class="container d-flex flex-wrap">
+            <div class="row">
                 @{
-                    if(Model.listaDiPizze != null)
+                    if (Model.listaDiPizze != null)
                     {
-                         foreach(var p in Model.listaDiPizze)
+                        foreach (var p in Model.listaDiPizze)
                         {
-                         <div class="card">
-                          <img src="@p.Foto" class="" alt="@p.Nome" />
-                          <h1 class="titolo">@p.Nome</h1>
-                          <p class="descrizione">@p.Descrizione</p>
-                          <p class="prezzo"> @p.Prezzo euro</p>
-                          <button class=""><a href="@Url.Action("Show","Pizza",new {@p.Id})">Scopri</a></button>
-                         </div>
-                       
+                            <div class="card">
+                                <img src="@p.Foto" class="" alt="@p.Nome" />
+                                <h1 class="titolo">@p.Nome</h1>
+                                <p class="descrizione">@p.Descrizione</p>
+                                <p class="prezzo"> @p.Prezzo euro</p>
+                                <button class=""><a href="@Url.Action("Show","Pizza",new {@p.Id})">Scopri</a></button>
+                            </div>
+
                         }
 
                     }
@@ -67,11 +67,12 @@
                         <h1>Non ci sono pizze nella nostra applicazione</h1>
                     }
 
-                 }
-    </div>
+                }
+            </div>
+
+        </div>
 
     </div>
-
-</div>
 </body>
 </html>
+
